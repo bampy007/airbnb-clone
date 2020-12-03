@@ -1,0 +1,9 @@
+<h1> home.html </h1>
+<h1> "" </h1>
+
+<h1> "LINE : " {{room.name}}  / ${{room.price} </h1>
+
+
+{% for room in rooms %}
+    <h1> "LINE[{{room}}] : " {{room.name}}  / ${{room.price}} </h1>
+{% endfor %}
