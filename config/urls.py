@@ -25,7 +25,7 @@ from django.conf.urls import include
 urlpatterns = [
     path("", include("core.urls", namespace="core") ), 
 #   path("", include("users.urls", namespace="users") ), 
-#   path("", include("rooms.urls", namespace="rooms") ), 
+    path("rooms/", include("rooms.urls", namespace="rooms") ), 
     path("admin/", admin.site.urls),
 ]
 
