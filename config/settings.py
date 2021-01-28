@@ -150,5 +150,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 MEDIA_URL = "media/"  #MEDIA_URL = "media/"   하위경로or절대경로
 
 
+# Email Configuration
 
-#Email Configuration
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = os.environ.get("MAILGUN_USERNAME")
+EMAIL_HOST_PASSWORD = os.environ.get("MAILGUN_PASSWORD")
+EMAIL_FROM = "no-reply@sandbox5a6002ee1daf403aa05fc5899f67efd0.mailgun.org"

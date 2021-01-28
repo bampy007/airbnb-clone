@@ -10,7 +10,11 @@ from . import models
 @admin.register(models.User)
 class CustomUserAdmin(admin.ModelAdmin):
 
-    list_display = ("username", "email", "gender", "language", "currency", "is_staff", "superhost")
+    list_display = (
+        "username", "email", "gender", "language", "currency", "is_staff", "superhost",
+        "email_verified",
+        "email_secret",
+    )
     list_filter = ("language", "currency", "superhost", "is_staff")
 
 #[2] alternative
@@ -20,9 +24,19 @@ class CustomUserAdmin(admin.ModelAdmin):
 
     fieldsets = UserAdmin.fieldsets + (
         (
-            "Custom Profile", 
-            { "fields": ("avatar","gender","bio", "birthdate", "language", "currency", "superhost",) 
-            }
+            "Custom Profile",
+            {
+                "fields": (
+                    "avatar",
+                    "gender",
+                    "bio",
+                    "birthdate",
+                    "language",
+                    "currency",
+                    "superhost",
+                    "login_method",
+                )
+            },
         ),
     )
     
