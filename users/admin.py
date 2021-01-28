@@ -11,11 +11,22 @@ from . import models
 class CustomUserAdmin(admin.ModelAdmin):
 
     list_display = (
-        "username", "email", "gender", "language", "currency", "is_staff", "superhost",
+        "username",
+        "email",
+        "gender",
+        "language",
+        "currency",
+        "is_staff",
+        "superhost",
         "email_verified",
         "email_secret",
+        "login_method",
     )
-    list_filter = ("language", "currency", "superhost", "is_staff")
+    list_filter = (
+            "language",
+            "currency",
+            "superhost",
+            "is_staff")
 
 #[2] alternative
 #admin.site.register(models.User, CustomUserAdmin)

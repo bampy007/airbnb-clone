@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 from django.utils.html import strip_tags
 from django.template.loader import render_to_string
 
+
 class User(AbstractUser):
 
     """ Custom User Model """
@@ -25,12 +26,10 @@ class User(AbstractUser):
 
     LANGUAGE_CHOICES = ((LANGUAGE_ENGLISH, "English"), (LANGUAGE_KOREAN, "Korean"))
 
-
     CURRENCY_USD = "usd"
     CURRENCY_KRW = "krw"
 
     CURRENCY_CHOICES = ((CURRENCY_USD, "USD"), (CURRENCY_KRW, "KRW"))
-
 
     LOGIN_EMAIL = "email"
     LOGIN_GITHUB = "github"
@@ -59,7 +58,7 @@ class User(AbstractUser):
     login_method = models.CharField(
         max_length=50, choices=LOGIN_CHOICES, default=LOGIN_EMAIL
     )
-    
+
     def verify_email(self):
         if self.email_verified is False:
             secret = uuid.uuid4().hex[:20]
@@ -77,4 +76,3 @@ class User(AbstractUser):
             )
             self.save()
         return
-
