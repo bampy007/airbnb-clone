@@ -14,10 +14,10 @@ class HomeView(ListView):
   pass
 
   model = models.Room
-  paginate_by = 10
+  paginate_by = 12
   paginate_orphans = 5
   ordering = "created"
-  #context_object_name = "rooms"
+  context_object_name = "rooms" #room_list.html : object_list를 rooms로 변경
 
   # def get_context_data(self, **kwargs):
   #   context = super().get_context_data(**kwargs)
